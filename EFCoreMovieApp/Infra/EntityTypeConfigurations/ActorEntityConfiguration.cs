@@ -9,19 +9,16 @@ using System.Threading.Tasks;
 
 namespace EFCoreMovieApp.Infra.EntityTypeConfigurations
 {
-    public class DirectorEntityConfiguration : BaseEntityTypeConfiguration<DirectorEntity>
+    public class ActorEntityConfiguration : BaseEntityTypeConfiguration<ActorEntity>
     {
-        public override void Configure(EntityTypeBuilder<DirectorEntity> builder)
+        public override void Configure(EntityTypeBuilder<ActorEntity> builder)
         {
-            builder.ToTable(name: "Directors", schema: "ef");
+            builder.ToTable(name: "Actors", schema: "ef");
 
+            //builder.HasMany(a => a.Movies)
+            //    .WithMany(m => m.Actors)
+            //    .UsingEntity(j => j.ToTable("MovieActors"));
 
-            // TODO: Movies relation
-            // One to many relation with MovieEntity
-
-            //builder.HasMany(d => d.Movies)
-            //    .WithOne(m => m.Director)
-            //    .HasForeignKey(m => m.DirectorId);
 
             builder.Property(e => e.FirstName)
                 .HasColumnName("FirstName")
