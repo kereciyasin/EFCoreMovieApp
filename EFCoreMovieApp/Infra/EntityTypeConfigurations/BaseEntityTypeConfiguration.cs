@@ -13,7 +13,13 @@ namespace EFCoreMovieApp.Infra.EntityTypeConfigurations
     {
         public void Configure(EntityTypeBuilder<TEntity> builder)
         {
-            throw new NotImplementedException();
+            builder.HasKey(e => e.Id);
+            builder.Property(e => e.CreatedDate)
+                .HasColumnType("datetime2");
+
+            builder.Property(e => e.ModifiedDate)
+                .HasColumnType("datetime2")
+                .IsRequired(false);
         }
     }
 
