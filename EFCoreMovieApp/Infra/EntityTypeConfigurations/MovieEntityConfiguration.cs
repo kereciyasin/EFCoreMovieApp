@@ -35,7 +35,7 @@ namespace EFCoreMovieApp.Infra.EntityTypeConfigurations
 
             //many to many relation with ActorEntity    
             builder.HasMany(m => m.Actors)
-                .WithMany(a => a.Movies)
+                .WithMany()
                 .UsingEntity(j => j.ToTable("MovieActors"));
 
 

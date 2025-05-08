@@ -12,6 +12,6 @@ namespace EFCoreMovieApp.Infra.Entities
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        public virtual ICollection<MovieEntity> Movies { get; set; }
+
     }
 }

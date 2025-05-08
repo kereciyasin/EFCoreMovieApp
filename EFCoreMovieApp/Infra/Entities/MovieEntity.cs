@@ -18,9 +18,6 @@ namespace EFCoreMovieApp.Infra.Entities
         public Guid DirectorId { get; set; }
         public virtual DirectorEntity Director { get; set; }
 
-        public Guid ActorId { get; set; }
-        public virtual ActorEntity Actor { get; set; }
-
         public virtual ICollection<ActorEntity> Actors { get; set; }
     }
 }
